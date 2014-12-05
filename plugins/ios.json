@@ -13,7 +13,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
                         },
                         {
@@ -33,7 +33,7 @@
             },
             "framework": {
                 "parents": {
-                    "SystemConfiguration.framework": [
+                    "AudioToolbox.framework": [
                         {
                             "xml": "true",
                             "count": 1
@@ -47,7 +47,7 @@
         "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.isi.googleanalyticsapp"
         },
-        "org.apache.cordova.network-information": {
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.isi.googleanalyticsapp"
         },
         "org.apache.cordova.statusbar": {

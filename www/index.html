@@ -67,10 +67,91 @@ var ua = 'UA-2386462-5';
 	</script>
 </head>
 <body onload="init()">
-	<br>
-		<br>
-			<br>
-	<a href="#" onclick="ga('send','pageview','/test-pageview');return false;">Send UA Pageview...</a>
-	<h1>Test</h1>
+	<!-- Start of first page -->
+<div data-role="page" id="quickPoints">
+	<div data-role="panel" data-position="right" data-postion-fixed="true" data-display="push" data-display="overlay" id="qpMenu">
+		<ul class="popup_menu" data-role="listview" data-inset="false">
+			<li><a href="#quickPoints">Quick Points</a></li>
+			<li><a href="#shopping">Shopping</a></li>
+			<li><a href="#performanceTracking">Performance Tracking</a></li>
+		</ul>
+	</div>
+	
+
+	<div data-role="header">
+		<h1>Reward Me!</h1>
+		<a href="#qpMenu" data-rel="panel" data-role="button" data-inline="true" data-icon="bullets" data-iconpos="notext" class="ui-btn-right">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm first in the source order so I'm shown as the page.</p>
+		<p>Submit a certificate <a class="ui-btn" href="#" onclick="ga('send','event','Enter Reward','Tap','Scan QuickPoint');return false;">Scan</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="shopping">
+	<div data-role="panel" data-position="right" data-postion-fixed="true" data-display="push" data-display="overlay" id="spMenu">
+		<ul class="popup_menu" data-role="listview" data-inset="false">
+			<li><a href="#quickPoints">Quick Points</a></li>
+			<li><a href="#shopping">Shopping</a></li>
+			<li><a href="#performanceTracking">Performance Tracking</a></li>
+		</ul>
+	</div>
+	
+	
+
+	<div data-role="header">
+		<a data-rel="back" data-role="button" data-direction="reverse" data-icon="carat-l" data-iconpos="notext" class="ui-btn-left">Back</a>
+		<h1>Shopping</h1>
+		<a href="#spMenu" data-rel="panel" data-role="button" data-inline="true" data-icon="bullets" data-iconpos="notext" class="ui-btn-right">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm the second in the source </p>
+		<p>I'm in my shopping cart about to check out <a class="ui-btn" href="#" onclick="ga('send','event','Rewarding Self','Tap','Checkout Button');return false;">Checkout</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->	
+	
+
+<!-- Start of second page -->
+<div data-role="page" id="performanceTracking">
+	
+	<div data-role="panel" data-position="right" data-postion-fixed="true" data-display="push" data-display="overlay" id="ptMenu">
+		<ul class="popup_menu" data-role="listview" data-inset="false">
+			<li><a href="#quickPoints">Quick Points</a></li>
+			<li><a href="#shopping">Shopping</a></li>
+			<li><a href="#performanceTracking">Performance Tracking</a></li>
+		</ul>
+	</div>
+	
+	
+
+	<div data-role="header">
+		<a data-rel="back" data-role="button" data-direction="reverse" data-icon="carat-l" data-iconpos="notext" class="ui-btn-left">Back</a>
+		<h1>Performance</h1>
+		<a href="#ptMenu" data-rel="panel" data-role="button" data-inline="true" data-icon="bullets" data-iconpos="notext" class="ui-btn-right">Menu</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm the third page</p>
+		<p>I'm submitting sale information <a class="ui-btn" href="#" onclick="ga('send','event','Tracking Sales','Tap','Submit Sale Button');return false;">Send sales infor</a></p>
+		
+		<a href="#" onclick="ga('send','pageview','/test-pageview');return false;">Send UA Pageview...</a>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->		
+	
 </body>
 </html>

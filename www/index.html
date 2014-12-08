@@ -5,7 +5,7 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 <meta http-equiv="Cache-control" content="no-store">
-<title>Google Analytics</title>
+<title>ISI Google Analytics App</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css">
 <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.css">
@@ -13,6 +13,8 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="js/analytics.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
 <script type="text/javascript">
 	
 	
@@ -47,24 +49,46 @@ function onDeviceReady() {
 			
 		},120000); // In mili seconds. 2 Min 
 		
-		console.log("Device Ready has fired");
 		
-} //end init Function	
-	
-	
-	
+		
+				    
+			
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','js/analytics.js','ga');
 
 var ua = 'UA-2386462-5';
-    ga('create', ua, {'storage': 'none','clientId': '136a742f70a0db20882eb61ac3039ecdabfd44ae'});
+var uuid = device.uuid;
+    ga('create', ua, {'storage': 'none','clientId': uuid });   //'136a742f70a0db20882eb61ac3039ecdabfd44ae'
 	ga('set','checkProtocolTask',null);
 	ga('set','checkStorageTask',null);
-    ga('send', 'pageview', {'page': '/itWorks!!!!'});     
+    ga('send', 'pageview'); //{'page': '/itWorks!!!!'});
+    
+    
+    
+ $(document).on('pageshow', '[data-role=page], [data-role=dialog]', function (event, ui) {
+			try {
+			    if ($.mobile.activePage.attr("data-url")) {
+				ga('send', 'pageview', $.mobile.activePage.attr("data-url")); 
+			    } else {
+				ga('send', 'pageview');
+			    }
+			} catch (err) {}
+		    });   
+    
+		
+		
+		
+		
+} //end init Function	
+	
 
-	</script>
+    
+    
+
+</script>
+
 </head>
 <body onload="init()">
 	<!-- Start of first page -->
@@ -85,7 +109,7 @@ var ua = 'UA-2386462-5';
 
 	<div role="main" class="ui-content">
 		<p>I'm first in the source order so I'm shown as the page.</p>
-		<p>Submit a certificate <a class="ui-btn" href="#" onclick="ga('send','event','Enter Reward','Tap','Scan QuickPoint');return false;">Scan</a></p>
+		<p>Submit a certificate <a class="ui-btn" onclick="ga('send','event','Enter Reward','Tap','Scan QuickPoint');return false;">Scan</a></p>
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -113,7 +137,7 @@ var ua = 'UA-2386462-5';
 
 	<div role="main" class="ui-content">
 		<p>I'm the second in the source </p>
-		<p>I'm in my shopping cart about to check out <a class="ui-btn" href="#" onclick="ga('send','event','Rewarding Self','Tap','Checkout Button');return false;">Checkout</a></p>
+		<p>I'm in my shopping cart about to check out <a class="ui-btn"  onclick="ga('send','event','Rewarding Self','Tap','Checkout Button');return false;">Checkout</a></p>
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -143,9 +167,9 @@ var ua = 'UA-2386462-5';
 
 	<div role="main" class="ui-content">
 		<p>I'm the third page</p>
-		<p>I'm submitting sale information <a class="ui-btn" href="#" onclick="ga('send','event','Tracking Sales','Tap','Submit Sale Button');return false;">Send sales infor</a></p>
+		<p>I'm submitting sale information <a class="ui-btn"  onclick="ga('send','event','Tracking Sales','Tap','Submit Sale Button');return false;">Send sales infor</a></p>
 		
-		<a href="#" onclick="ga('send','pageview','/test-pageview');return false;">Send UA Pageview...</a>
+		<a  onclick="ga('send','pageview','/test-pageview');return false;">Send UA Pageview...</a>
 	</div><!-- /content -->
 
 	<div data-role="footer">

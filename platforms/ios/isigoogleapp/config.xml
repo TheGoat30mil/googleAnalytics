@@ -25,6 +25,9 @@
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
     </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -53,7 +56,6 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="False" />
-    <preference name="StatusBarBackgroundColor" value="#191D21" />
     <preference name="orientation" value="portrait" />
     <preference name="webviewbounce" value="false" />
     <gap:plugin name="org.apache.cordova.battery-status" />

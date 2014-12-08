@@ -17,6 +17,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" onload=\"true\" value=\"CDVStatusBar\" /></feature>",
                             "count": 1
                         },
@@ -38,6 +42,12 @@
                             "xml": "true",
                             "count": 1
                         }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -48,6 +58,9 @@
             "PACKAGE_NAME": "com.isi.googleanalyticsapp"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.isi.googleanalyticsapp"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.isi.googleanalyticsapp"
         },
         "org.apache.cordova.statusbar": {
